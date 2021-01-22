@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if is_christmas %}
+    <link rel="stylesheet" href="{% static 'natal/isnatal.css' %}">
+    {% else %}
+    <link rel="stylesheet" href="{% static 'natal/isnotnatal.css' %}">
+    {% endif %}
+    <title>É Natal?</title>
+</head>
+
+<body>
+    {% if is_christmas %}
+    <h1>HOJE É NATAL =), FELIZ NATAL!!!</h1>
+    {% else %}
+    <h1>HOJE NÃO É NATAL!</h1>
+    {% endif %}
+    <h2>Dias para o Natal: {{ time_to_christmas }}</h2>
+    <h3>Minutos para o natal: {{ minutes_to_christmas }}</h3>
+</body>
+
+</html>
